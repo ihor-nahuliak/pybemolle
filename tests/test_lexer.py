@@ -103,6 +103,46 @@ class TestCase(unittest.TestCase):
             result
         )
 
+    def test_diesis_major_latin_chords(self):
+        result = self.highlight(':: C# D# E# F# G# A# H#')
+
+        self.assertEqual(
+            '<div class="highlight">'
+            '<pre>'
+            '<span></span>'
+            '<span class="kn">::</span> '
+            '<span class="mus-cs mus-maj">C#</span> '
+            '<span class="mus-ds mus-maj">D#</span> '
+            '<span class="mus-es mus-maj">E#</span> '
+            '<span class="mus-fs mus-maj">F#</span> '
+            '<span class="mus-gs mus-maj">G#</span> '
+            '<span class="mus-as mus-maj">A#</span> '
+            '<span class="mus-bs mus-maj">H#</span>'
+            '</pre>'
+            '</div>',
+            result
+        )
+
+    def test_diesis_minor_latin_chords(self):
+        result = self.highlight(':: C#m D#m E#m F#m G#m A#m H#m')
+
+        self.assertEqual(
+            '<div class="highlight">'
+            '<pre>'
+            '<span></span>'
+            '<span class="kn">::</span> '
+            '<span class="mus-cs mus-min">C#m</span> '
+            '<span class="mus-ds mus-min">D#m</span> '
+            '<span class="mus-es mus-min">E#m</span> '
+            '<span class="mus-fs mus-min">F#m</span> '
+            '<span class="mus-gs mus-min">G#m</span> '
+            '<span class="mus-as mus-min">A#m</span> '
+            '<span class="mus-bs mus-min">H#m</span>'
+            '</pre>'
+            '</div>',
+            result
+        )
+
 
 if __name__ == '__main__':
     unittest.main()
