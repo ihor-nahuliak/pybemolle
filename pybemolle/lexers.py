@@ -15,7 +15,7 @@ class BemolleLexer(RegexLexer):
     mimetypes = ['text/be-molle', 'text/b-molle',
                  'text/bemolle', 'text/bmolle']
 
-    def include_chords(*tokens, alt=r'[#\*\w\\\/]*'):
+    def include_chords(*tokens, alt=r'[#\*\+\w\\\/]*'):
         """Makes a list of tokens ready to include.
         Adds all possible tokens: major, minor, a symbols, etc.
 
