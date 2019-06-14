@@ -4,53 +4,74 @@ from __future__ import unicode_literals
 from pygments.token import *
 
 
-Chord = Name.Chord
-
-Do = C = Chord.C
-Re = D = Chord.D
-Mi = E = Chord.E
-Fa = F = Chord.F
-Sol = G = Chord.G
-La = A = Chord.A
-Si = B = Chord.B
-
-DoBemolle = CFlat = Chord.C.Flat
-ReBemolle = DFlat = Chord.D.Flat
-MiBemolle = EFlat = Chord.E.Flat
-FaBemolle = FFlat = Chord.F.Flat
-SolBemolle = GFlat = Chord.G.Flat
-LaBemolle = AFlat = Chord.A.Flat
-SiBemolle = BFlat = Chord.B.Flat
-
-DoDiesis = CSharp = Chord.C.Sharp
-ReDiesis = DSharp = Chord.D.Sharp
-MiDiesis = ESharp = Chord.E.Sharp
-FaDiesis = FSharp = Chord.F.Sharp
-SolDiesis = GSharp = Chord.G.Sharp
-LaDiesis = ASharp = Chord.A.Sharp
-SiDiesis = BSharp = Chord.B.Sharp
+Music = Token.Music
+Chord = Music.Chord
 
 # put our own tokens into style sheet
+# "mus-" prefix here music means
 STANDARD_TYPES.update({
-    C: 'c',
-    D: 'd',
-    E: 'e',
-    F: 'f',
-    G: 'f',
-    A: 'a',
-    B: 'b',
-    C.Flat: 'cb',
-    D.Flat: 'db',
-    E.Flat: 'eb',
-    F.Flat: 'fb',
-    G.Flat: 'fb',
-    A.Flat: 'ab',
-    B.Flat: 'bb',
-    C.Sharp: 'cs',
-    D.Sharp: 'ds',
-    E.Sharp: 'es',
-    F.Sharp: 'fs',
-    G.Sharp: 'fs',
-    A.Sharp: 'as',
-    B.Sharp: 'bs',
+    Chord.C: 'mus-c',
+    Chord.D: 'mus-d',
+    Chord.E: 'mus-e',
+    Chord.F: 'mus-f',
+    Chord.G: 'mus-g',
+    Chord.A: 'mus-a',
+    Chord.B: 'mus-b',
+    Chord.C.Flat: 'mus-cb',
+    Chord.D.Flat: 'mus-db',
+    Chord.E.Flat: 'mus-eb',
+    Chord.F.Flat: 'mus-fb',
+    Chord.G.Flat: 'mus-gb',
+    Chord.A.Flat: 'mus-ab',
+    Chord.B.Flat: 'mus-bb',
+    Chord.C.Sharp: 'mus-cs',
+    Chord.D.Sharp: 'mus-ds',
+    Chord.E.Sharp: 'mus-es',
+    Chord.F.Sharp: 'mus-fs',
+    Chord.G.Sharp: 'mus-gs',
+    Chord.A.Sharp: 'mus-as',
+    Chord.B.Sharp: 'mus-bs',
+    Chord.C.Major: 'mus-c mus-maj',
+    Chord.D.Major: 'mus-d mus-maj',
+    Chord.E.Major: 'mus-e mus-maj',
+    Chord.F.Major: 'mus-f mus-maj',
+    Chord.G.Major: 'mus-g mus-maj',
+    Chord.A.Major: 'mus-a mus-maj',
+    Chord.B.Major: 'mus-b mus-maj',
+    Chord.C.Flat.Major: 'mus-cb mus-maj',
+    Chord.D.Flat.Major: 'mus-db mus-maj',
+    Chord.E.Flat.Major: 'mus-eb mus-maj',
+    Chord.F.Flat.Major: 'mus-fb mus-maj',
+    Chord.G.Flat.Major: 'mus-gb mus-maj',
+    Chord.A.Flat.Major: 'mus-ab mus-maj',
+    Chord.B.Flat.Major: 'mus-bb mus-maj',
+    Chord.C.Sharp.Major: 'mus-cs mus-maj',
+    Chord.D.Sharp.Major: 'mus-ds mus-maj',
+    Chord.E.Sharp.Major: 'mus-es mus-maj',
+    Chord.F.Sharp.Major: 'mus-fs mus-maj',
+    Chord.G.Sharp.Major: 'mus-gs mus-maj',
+    Chord.A.Sharp.Major: 'mus-as mus-maj',
+    Chord.B.Sharp.Major: 'mus-bs mus-maj',
+    Chord.C.Minor: 'mus-c mus-min',
+    Chord.D.Minor: 'mus-d mus-min',
+    Chord.E.Minor: 'mus-e mus-min',
+    Chord.F.Minor: 'mus-f mus-min',
+    Chord.G.Minor: 'mus-g mus-min',
+    Chord.A.Minor: 'mus-a mus-min',
+    Chord.B.Minor: 'mus-b mus-min',
+    Chord.C.Flat.Minor: 'mus-cb mus-min',
+    Chord.D.Flat.Minor: 'mus-db mus-min',
+    Chord.E.Flat.Minor: 'mus-eb mus-min',
+    Chord.F.Flat.Minor: 'mus-fb mus-min',
+    Chord.G.Flat.Minor: 'mus-gb mus-min',
+    Chord.A.Flat.Minor: 'mus-ab mus-min',
+    Chord.B.Flat.Minor: 'mus-bb mus-min',
+    Chord.C.Sharp.Minor: 'mus-cs mus-min',
+    Chord.D.Sharp.Minor: 'mus-ds mus-min',
+    Chord.E.Sharp.Minor: 'mus-es mus-min',
+    Chord.F.Sharp.Minor: 'mus-fs mus-min',
+    Chord.G.Sharp.Minor: 'mus-gs mus-min',
+    Chord.A.Sharp.Minor: 'mus-as mus-min',
+    Chord.B.Sharp.Minor: 'mus-bs mus-min',
+    Chord.Alt: 'mus-alt',
 })

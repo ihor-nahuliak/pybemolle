@@ -10,7 +10,6 @@
 """
 
 from pygments.style import Style
-from pygments.token import *
 
 from pybemolle.tokens import *
 
@@ -30,13 +29,13 @@ class BemolleStyle(Style):
         Token: '#d0d0d0',
         Whitespace: '#666666',
 
-        C: '#00e800',
-        D: '#006bff',
-        E: '#8100ce',
-        F: '#3d015b',
-        G: '#d10400',
-        A: '#ff8800',
-        B: '#9af400',
+        Chord.C: '#00e800',
+        Chord.D: '#006bff',
+        Chord.E: '#8100ce',
+        Chord.F: '#3d015b',
+        Chord.G: '#d10400',
+        Chord.A: '#ff8800',
+        Chord.B: '#9af400',
 
         Error: 'bg:#e3d2d2 #a61717'
     }
