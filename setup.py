@@ -19,7 +19,6 @@ Highlights are:
 """
 import os
 import sys
-import io
 from shutil import rmtree
 
 try:
@@ -64,14 +63,6 @@ __extras_requires__ = {
 
 ROOT = os.path.abspath(os.path.dirname(__file__))
 
-# Import the README and use it as the long-description.
-# Note: this will only work if 'README.md' is present in your MANIFEST.in file!
-try:
-    with io.open(os.path.join(ROOT, 'README.md')) as f:
-        long_description = '\n' + f.read()
-except FileNotFoundError:
-    long_description = __doc__
-
 
 # Note: To use the 'upload' functionality of this file, you must:
 # $ pip install twine --dev
@@ -108,9 +99,9 @@ if have_setuptools:
             self.status('Uploading the package to PyPI via Twine…')
             os.system('twine upload dist/*')
 
-            self.status('Pushing git tags…')
-            os.system('git tag v{0}'.format(__version__))
-            os.system('git push --tags')
+            # self.status('Pushing git tags…')
+            # os.system('git tag v{0}'.format(__version__))
+            # os.system('git push --tags')
 
             sys.exit()
 
@@ -125,8 +116,8 @@ setup(
     name='pybemolle',
     version=__version__,
     description=__doc__,
-    long_description=long_description,
-    long_description_content_type='text/markdown',
+    # long_description=__doc__,
+    # long_description_content_type='text/plain',
     author=__author__,
     author_email=__author_email__,
     url=__url__,
