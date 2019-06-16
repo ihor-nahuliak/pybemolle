@@ -15,9 +15,7 @@ class TestCase(unittest.TestCase):
     def setUpClass(cls):
         root_path = os.path.dirname(os.path.dirname(__file__))
         lexer_filename = os.path.join(root_path, 'pybemolle', 'lexers.py')
-        cls.lexer = load_lexer_from_file(lexer_filename,
-                                         lexername='BemolleLexer',
-                                         stripall=True)
+        cls.lexer = load_lexer_from_file(lexer_filename, 'BemolleLexer')
         cls.formatter = get_formatter_by_name('html', style='bemolle')
 
     def highlight(self, s):
