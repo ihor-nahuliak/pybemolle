@@ -1,4 +1,32 @@
 # -*- coding: utf-8 -*-
+"""
+There are equivalent css classes:
+
+.highlight .mus-c { color: #00e800; }
+.highlight .mus-d { color: #006bff; }
+.highlight .mus-e { color: #8100ce; }
+.highlight .mus-f { color: #3d015b; }
+.highlight .mus-f { color: #d10400; }
+.highlight .mus-a { color: #ff8800; }
+.highlight .mus-b { color: #9af400; }
+
+.highlight .mus-cb { color: #9af400; }
+.highlight .mus-db { color: #05feaa; }
+.highlight .mus-eb { color: #2e01f0; }
+.highlight .mus-fb { color: #8100ce; }
+.highlight .mus-gb { color: #680351; }
+.highlight .mus-ab { color: #e44202; }
+.highlight .mus-bb { color: #ebff07; }
+
+.highlight .mus-cs { color: #05feaa; }
+.highlight .mus-ds { color: #2e01f0; }
+.highlight .mus-es { color: #3d015b; }
+.highlight .mus-fs { color: #680351; }
+.highlight .mus-gs { color: #e44202; }
+.highlight .mus-as { color: #ebff07; }
+.highlight .mus-bs { color: #00e800; }
+
+"""
 from __future__ import unicode_literals
 
 from pygments.style import Style
