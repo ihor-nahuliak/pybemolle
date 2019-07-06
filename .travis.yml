@@ -16,4 +16,6 @@ install:
   - pip install .
 # command to run tests
 script:
-  - pytest
+  - py.test -v --pep8 --cov-config=.coveragerc --cov=pybemolle --cov-report=term-missing --doctest-modules tests
+after_success:
+  - coveralls

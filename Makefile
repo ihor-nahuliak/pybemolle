@@ -1,4 +1,4 @@
-.PHONY: install
+.PHONY: install test
 
 DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 SHELL=/bin/bash
@@ -13,7 +13,16 @@ STATUS_ERROR := \033[1;31m*\033[0m Error
 STATUS_OK := \033[1;32m*\033[0m OK
 
 
-install-env:
+install-env-python2:
+	rm -rf "$(DIR)/env/" ;\
+	virtualenv -p /usr/bin/python3 --clear "$(DIR)/env/" ;\
+	if [ $$? -eq 0 ]; then \
+		echo -e "${STATUS_OK}" ;\
+	else \
+		echo -e "${STATUS_ERROR}" ;\
+	fi;
+
+install-env-python3:
 	rm -rf "$(DIR)/env/" ;\
 	virtualenv -p /usr/bin/python3 --clear "$(DIR)/env/" ;\
 	if [ $$? -eq 0 ]; then \
@@ -34,4 +43,15 @@ install-python-libs:
 		echo -e "${STATUS_ERROR}" ;\
 	fi;
 
-install: install-env env-activate install-python-libs\
+install: install-env-python3 env-activate install-python-libs
+
+
+test:
+	$(DIR)/env/bin/py.test \
+	-v \
+	--pep8 \
+	--cov-config=.coveragerc \
+	--cov=pybemolle \
+	--cov-report=html \
+	--doctest-modules \
+	tests
