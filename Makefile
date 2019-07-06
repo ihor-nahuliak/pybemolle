@@ -1,4 +1,4 @@
-.PHONY: install test
+.PHONY: clean install test
 
 DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 SHELL=/bin/bash
@@ -13,9 +13,18 @@ STATUS_ERROR := \033[1;31m*\033[0m Error
 STATUS_OK := \033[1;32m*\033[0m OK
 
 
+clean: clean-pyc
+	-rm -rf build
+	-rm -f codetags.html
+
+clean-pyc:
+	find . -name '*.pyc' -exec rm -f {} +
+	find . -name '*.pyo' -exec rm -f {} +
+	find . -name '*~' -exec rm -f {} +
+
 install-env-python2:
 	rm -rf "$(DIR)/env/" ;\
-	virtualenv -p /usr/bin/python3 --clear "$(DIR)/env/" ;\
+	virtualenv -p /usr/bin/python2 --clear "$(DIR)/env/" ;\
 	if [ $$? -eq 0 ]; then \
 		echo -e "${STATUS_OK}" ;\
 	else \

@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 from pygments.lexer import RegexLexer, bygroups, default
 from pybemolle.tokens import *
 
@@ -15,19 +13,19 @@ class BemolleLexer(RegexLexer):
     mimetypes = ['text/be-molle', 'text/b-molle',
                  'text/bemolle', 'text/bmolle']
 
-    def include_chords(*tokens, alt=r'[#\*\+\w\\\/]*'):
+    def include_chords(*tokens):
         """Makes a list of tokens ready to include.
         Adds all possible tokens: major, minor, a symbols, etc.
 
         :param tuple tokens: tuple of (regex, pygments.token.Token)
-        :param str alt: alteration symbols regexp
         :return list: list of tokens ready to include
         """
+        alt_regexp = r'[#\*\+\w\\\/]*'
         result = [(r'(?:[ \t]|\\\n)+', Text)]
         for r, ch in tokens:
-            result.append((r'\b({0}m)({1})'.format(r, alt),
+            result.append((r'\b({0}m)({1})'.format(r, alt_regexp),
                            bygroups(ch.Minor, ch.Alt)))
-            result.append((r'\b({0})({1})'.format(r, alt),
+            result.append((r'\b({0})({1})'.format(r, alt_regexp),
                            bygroups(ch.Major, ch.Alt)))
         result.append(default('#pop'))
         return result
