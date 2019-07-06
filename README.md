@@ -1,6 +1,6 @@
 # pybemolle
-![https://travis-ci.org/ihor-nahuliak/pybemolle.svg?branch=master](https://travis-ci.org/ihor-nahuliak/pybemolle.svg?branch=master)
-![https://coveralls.io/repos/github/ihor-nahuliak/pybemolle/badge.svg?branch=master](https://coveralls.io/repos/github/ihor-nahuliak/pybemolle/badge.svg?branch=master)
+[![Build Status](https://travis-ci.org/ihor-nahuliak/pybemolle.svg?branch=master)](https://travis-ci.org/ihor-nahuliak/pybemolle.svg?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/ihor-nahuliak/pybemolle/badge.svg)](https://coveralls.io/github/ihor-nahuliak/pybemolle)
 
 PyBemolle is a [pygments](http://pygments.org/) library plugin made to colorize guitar chords
 
