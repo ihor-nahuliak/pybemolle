@@ -43,7 +43,7 @@ __author__ = 'Ihor Nahuliak'
 __author_email__ = 'ihor.nahuliak@gmail.com'
 __url__ = 'https://github.com/ihor-nahuliak/pybemolle'
 __license__ = 'GPL v.3.0'
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 
 __python_requires__ = [
     '>=2.7',
@@ -57,7 +57,14 @@ __install_requires__ = [
     'pygments>=2.4.2',
 ]
 __extras_requires__ = {
-    'dev': ['setuptools', 'twine'],
+    'dev': [
+        'setuptools',
+        'twine',
+        'pytest',
+        'pytest-pep8',
+        'pytest-cov',
+        'python-coveralls',
+    ],
 }
 
 
